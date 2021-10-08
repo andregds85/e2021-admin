@@ -1,4 +1,5 @@
 @extends('layouts4.app')
+@extends('layouts4.valida')
 @section('content')
     <div class="row">
         <div class="col-lg-12 margin-tb">
@@ -20,7 +21,6 @@
             <th>x</th>
             <th>Nome</th>
             <th>Cnes</th>
-            <th>Macro</th>
             <th width="280px">Ação</th>
         </tr>
 	    @foreach ($categorias as $categoria)
@@ -28,7 +28,6 @@
 	        <td>{{ ++$i }}</td>
 	        <td>{{ $categoria->name }}</td>
 	        <td>{{ $categoria->cnes }}</td>
-            <td>{{ $categoria->macro }}</td>
 	        <td>
                 <form action="{{ route('categorias.destroy',$categoria->id) }}" method="POST">
                     <a class="btn btn-info" href="{{ route('categorias.show',$categoria->id) }}">Mostrar</a>
@@ -48,6 +47,14 @@
 	    @endforeach
     </table>
 
+    <div class="d-flex justify-content-center">
+
     {!! $categorias->links() !!}
+
+
+</div>
+
+
+
 
 @endsection

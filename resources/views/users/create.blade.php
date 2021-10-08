@@ -5,9 +5,7 @@
         <div class="pull-left">
             <h2>Novo Usuário</h2>
         </div>
-        <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('users.index') }}"> Voltar</a>
-        </div>
+    
     </div>
 </div>
 
@@ -26,7 +24,6 @@
 
 <?php
 $id=$_GET['id'];
-echo $id;
 ?>
 
 

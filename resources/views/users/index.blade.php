@@ -1,11 +1,29 @@
 @extends('layouts4.app')
 @section('content')
+
+<?php
+session_start();
+$_SESSION['a'] = 1;
+
+
+
+
+
+
+?>
+
+
+
+
+
+
+
+
 <div class="card mb-3">
   <div class="card-body">
     <h5 class="card-title">Exportar Usuários</h5>
     <p class="card-text">
    <a class="nav-link" href="{{ url('import_export') }}">Exportar Usuários</a>
-
     </p>
   </div>
 </div>
@@ -26,8 +44,6 @@
   <p>{{ $message }}</p>
 </div>
 @endif
-
-
 
 
 <table class="table table-bordered">

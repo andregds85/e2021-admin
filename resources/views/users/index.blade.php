@@ -2,13 +2,17 @@
 @section('content')
 
 <?php
-session_start();
-$_SESSION['a'] = 1;
+
+
+/* verificar seo usuário é administrador aew grava a sessão senão Logout */
+     session_start();
+     $_SESSION['a'] = 1;
 
 
 
 
 
+     
 
 ?>
 

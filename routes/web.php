@@ -21,7 +21,6 @@ use App\Http\Controllers\obsMapaP2sController;
 
 
 
-
 Route::get('/', function () {
     return view('home');
 });
@@ -40,12 +39,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('mapas', MapasController::class);
     Route::resource('macro', macro::class);
 
-
-
-    
-
-    
-    
+  
     /* url chamando um methodo do Controller 
     Route::get('pacienteMapa', 'App\Http\Controllers\mapasRegController@abc');
     */

@@ -4,15 +4,24 @@
 <?php
 
 
-/* verificar seo usuário é administrador aew grava a sessão senão Logout */
-     session_start();
-     $_SESSION['a'] = 1;
+
+    $perfil=Auth::user()->perfil;
+    if ($perfil=="administrador"){
+    session_start();
+    $_SESSION['a'] = 1;
+      }else{
+       echo "Você Nã tem privilegios";   
+       session_destroy();
+
+       flash();
+
+      }
 
 
 
 
 
-     
+
 
 ?>
 
@@ -24,8 +33,10 @@
 
 
 <div class="card mb-3">
-  <div class="card-body">
-    <h5 class="card-title">Exportar Usuários</h5>
+  <div class="card-body">   
+     <h5 class="card-title">Perfil:   <?php echo $perfil; ?> </h5> <br>
+
+    <h5 class="card-title">Exportar Usuários  </h5>
     <p class="card-text">
    <a class="nav-link" href="{{ url('import_export') }}">Exportar Usuários</a>
     </p>

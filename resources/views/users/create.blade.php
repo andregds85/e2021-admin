@@ -1,5 +1,7 @@
 @extends('limpo.app')
+@extends('layouts4.valida')
 @section('content')
+
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">

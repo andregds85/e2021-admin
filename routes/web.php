@@ -9,15 +9,11 @@ use App\Http\Controllers\PacienteController;
 use App\Http\Controllers\HospitalController;
 use App\Http\Controllers\soudohospital;
 use App\Http\Controllers\MapasController;
+use App\Http\Controllers\SairController;
+
 use App\Http\Controllers\MacroController;
 use App\Http\Controllers\ManualController;
 use App\Http\Controllers\macro;
-use App\Http\Controllers\mapasRegController;
-use App\Http\Controllers\incluirMapaP2sController;
-use App\Http\Controllers\contarController;
-use App\Http\Controllers\MunicipioController;
-use App\Http\Controllers\MedicoReguladorController;
-use App\Http\Controllers\obsMapaP2sController;
 
 
 
@@ -34,8 +30,12 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('roles', RoleController::class);
     Route::resource('users', UserController::class);
     Route::resource('categorias', CategoriaController::class);
+    Route::resource('sair', SairController::class);
+
     Route::resource('macros', MacroController::class);
-    Route::resource('hospital', HospitalController::class);
+    Route::resource('manual', ManualController::class);
+
+    
     Route::resource('mapas', MapasController::class);
     Route::resource('macro', macro::class);
 

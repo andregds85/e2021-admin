@@ -1,6 +1,24 @@
 @extends('layouts4.app')
-
 @section('content')
+@extends('layouts4.valida')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">

@@ -10,10 +10,8 @@
     session_start();
     $_SESSION['a'] = 1;
       }else{
-       echo "Você Nã tem privilegios";   
-       session_destroy();
-
-       flash();
+        echo redirect()->route('sair.index');
+      
 
       }
 

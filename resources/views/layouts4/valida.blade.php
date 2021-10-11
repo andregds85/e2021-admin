@@ -6,12 +6,8 @@ session_start();
   echo redirect()->route('sair.index');
 
   }
-         
-
-
-
-
-
-
+    
+  
+  
   
 ?>

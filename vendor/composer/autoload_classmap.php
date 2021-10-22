@@ -30,6 +30,7 @@ return array(
     'App\\Http\\Controllers\\MunicipioController' => $baseDir . '/app/Http/Controllers/MunicipioController.php',
     'App\\Http\\Controllers\\PacienteController' => $baseDir . '/app/Http/Controllers/PacienteController.php',
     'App\\Http\\Controllers\\RoleController' => $baseDir . '/app/Http/Controllers/RoleController.php',
+    'App\\Http\\Controllers\\SairController' => $baseDir . '/app/Http/Controllers/SairController.php',
     'App\\Http\\Controllers\\UserController' => $baseDir . '/app/Http/Controllers/UserController.php',
     'App\\Http\\Controllers\\categoriaMapas' => $baseDir . '/app/Http/Controllers/categoriaMapas.php',
     'App\\Http\\Controllers\\contarController' => $baseDir . '/app/Http/Controllers/contarController.php',

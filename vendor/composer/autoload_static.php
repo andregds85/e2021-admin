@@ -647,6 +647,7 @@ class ComposerStaticInitad427575ce04c5c654559c701f2d00a8
         'App\\Http\\Controllers\\MunicipioController' => __DIR__ . '/../..' . '/app/Http/Controllers/MunicipioController.php',
         'App\\Http\\Controllers\\PacienteController' => __DIR__ . '/../..' . '/app/Http/Controllers/PacienteController.php',
         'App\\Http\\Controllers\\RoleController' => __DIR__ . '/../..' . '/app/Http/Controllers/RoleController.php',
+        'App\\Http\\Controllers\\SairController' => __DIR__ . '/../..' . '/app/Http/Controllers/SairController.php',
         'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
         'App\\Http\\Controllers\\categoriaMapas' => __DIR__ . '/../..' . '/app/Http/Controllers/categoriaMapas.php',
         'App\\Http\\Controllers\\contarController' => __DIR__ . '/../..' . '/app/Http/Controllers/contarController.php',

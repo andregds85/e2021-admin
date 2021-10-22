@@ -31,28 +31,20 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('users', UserController::class);
     Route::resource('categorias', CategoriaController::class);
     Route::resource('sair', SairController::class);
-
     Route::resource('macros', MacroController::class);
     Route::resource('manual', ManualController::class);
-
-    
     Route::resource('mapas', MapasController::class);
     Route::resource('macro', macro::class);
 
-  
     /* url chamando um methodo do Controller 
     Route::get('pacienteMapa', 'App\Http\Controllers\mapasRegController@abc');
     */
-
-
    
     Route::get('import_exportpacie', 'App\Http\Controllers\Import_Export_ControllerPacie@importExport');
     Route::post('importpacie', 'App\Http\Controllers\Import_Export_ControllerPacie@import');
     Route::get('exportpacie', 'App\Http\Controllers\Import_Export_ControllerPacie@export');
-
     Route::get('import_export', 'App\Http\Controllers\Import_Export_Controller@index');
   
-
     /*
     Route::post('import', 'App\Http\Controllers\Import_Export_Controller@import'); */
   
@@ -62,6 +54,10 @@ Route::group(['middleware' => ['auth']], function() {
 
 
 });
+
+
+
+
 
 
 

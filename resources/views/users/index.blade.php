@@ -3,31 +3,15 @@
 
 <?php
 
-
-
-    $perfil=Auth::user()->perfil;
+   $perfil=Auth::user()->perfil;
     if ($perfil=="administrador"){
     session_start();
     $_SESSION['a'] = 1;
       }else{
         echo redirect()->route('sair.index');
       
-
       }
-
-
-
-
-
-
-
 ?>
-
-
-
-
-
-
 
 
 <div class="card mb-3">
@@ -62,24 +46,21 @@
 <table class="table table-bordered">
  <tr>
    <th>x</th>
-   <th>Nome</th>
-   <th>Email</th>
-   <th>Grupo</th>
-   <th width="280px">Ação</th>
+
  </tr>
  @foreach ($data as $key => $user)
   <tr>
-    <td>{{ ++$i }}</td>
-    <td>{{ $user->name }}</td>
-    <td>{{ $user->email }}</td>
-    <td>
+    <td>{{ ++$i }}
+    {{ $user->name }}
+    {{ $user->email }}
+    
       @if(!empty($user->getRoleNames()))
         @foreach($user->getRoleNames() as $v)
            <label class="badge badge-success">{{ $v }}</label>
         @endforeach
       @endif
-    </td>
-    <td>
+    
+    
        <a class="btn btn-info" href="{{ route('users.show',$user->id) }}">Mostrar</a>
        <a class="btn btn-primary" href="{{ route('users.edit',$user->id) }}">Editar</a>
         {!! Form::open(['method' => 'DELETE','route' => ['users.destroy', $user->id],'style'=>'display:inline']) !!}
@@ -91,12 +72,11 @@
 </table>
 
 
-{!! $data->render() !!}
+<div class="d-flex justify-content-center">
 
+<?php echo $data->render(); ?>
+
+</div>
 
 <p class="text-center text-primary"><small>usuários</small></p>
 @endsection
-
-
-
-

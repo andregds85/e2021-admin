@@ -2,20 +2,14 @@
 @extends('layouts4.valida')
 @section('content')
 
-
-<script language="JavaScript" type="text/javascript" src="js/cidades-estados-1.4-utf8.js"></script>
-     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  
-      
- <div class="row">
+<div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
             <h2>Novo Usuário</h2>
         </div>
-    
+        <div class="pull-right">
+            <a class="btn btn-primary" href="{{ route('users.index') }}"> Voltar</a>
+        </div>
     </div>
 </div>
 
@@ -34,10 +28,13 @@
 
 <?php
 $id=$_GET['id'];
+echo $id;
 ?>
 
 
-{!! Form::open(array('route' => 'users.store','method'=>'POST' class="was-validated")) !!}
+
+
+{!! Form::open(array('route' => 'users.store','method'=>'POST')) !!}
 <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
@@ -138,6 +135,7 @@ $id=$_GET['id'];
 		            <input type="text" name="cpf" class="form-control" placeholder="Entre com o cpf">
            </div>
 
+
            <div class="row">
 		    <div class="col-xs-12 col-sm-12 col-md-12">
 		        <div class="form-group">
@@ -145,97 +143,11 @@ $id=$_GET['id'];
 		            <input type="text" name="telefone" class="form-control" placeholder="Entre com o telefone">
            </div>          
 
-          
-
-
-
-
-
-
-
-
-
-           
-   <!-- Inserir Usuário -->      
-  <div class="container-fluid">    
-   
-  <!--    
-  <form class="was-validated"  name="regform" method="POST" action="idenfica.php" onsubmit="return valida()">
-
---> 
-        
-    </div>
-      
-      <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="nome">Estado:</label>
-      <select id="estado4" name="estado"></select>
-      <div class="invalid-feedback">Favor Selecionar Estado</div>
-    
-        
-    </div>
-      
-      <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="Senha">Cidade</label>
-      <select id="cidade4" name="cidade"></select>
-      <div class="invalid-feedback">Favor preencher a cidade</div>
-    
-        
-    </div>
-       
-     
-      
-   
-    <script language="JavaScript" type="text/javascript" charset="utf-8">
-      new dgCidadesEstados({
-        cidade: document.getElementById('cidade4'),
-        estado: document.getElementById('estado4')
-      })
-    </script>
-
-      
-      
-      
-      
-    
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="col-xs-12 col-sm-12 col-md-12 text-center">
         <button type="submit" class="btn btn-primary">Cadastrar</button>
- </div>
+    </div>
 
 {!! Form::close() !!}
 
 <p class="text-center text-primary"><small>Usuários</small></p>
 @endsection
-
-
-
-
-
-
-
-
-
-
-
-

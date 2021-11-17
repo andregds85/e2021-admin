@@ -2,6 +2,19 @@
 @extends('layouts4.valida')
 @section('content')
 
+
+<script language="JavaScript" type="text/javascript" src="../js/cidades-estados-1.4-utf8.js"></script>
+     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        
+      
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+     
+  
+
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
@@ -12,7 +25,6 @@
         </div>
     </div>
 </div>
-
 
 
 @if (count($errors) > 0)
@@ -33,8 +45,7 @@ echo $id;
 
 
 
-
-{!! Form::open(array('route' => 'users.store','method'=>'POST')) !!}
+{!! Form::open(array('route' => 'users.store','method'=>'POST','class=was-validated')) !!}
 <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
@@ -128,11 +139,14 @@ echo $id;
         </div>
 </div>
 
+
 <div class="row">
 		    <div class="col-xs-12 col-sm-12 col-md-12">
 		        <div class="form-group">
 		            <strong>CPF:</strong>
 		            <input type="text" name="cpf" class="form-control" placeholder="Entre com o cpf">
+           </div>
+           </div>
            </div>
 
 
@@ -141,11 +155,59 @@ echo $id;
 		        <div class="form-group">
 		            <strong>Telefone:</strong>
 		            <input type="text" name="telefone" class="form-control" placeholder="Entre com o telefone">
-           </div>          
+           </div>     
+           </div>
+           </div>
+
+           
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
+                <label for="exampleInputCategoria">Estado</label>
+                <select class="form-control" name="estado" id="estado">
+                <div class="invalid-feedback">Favor Selecionar Estado</div>
+
+
+                </select>
+            </div>
+        </div>
+</div>
+
+
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
+                <label for="exampleInputCategoria">Cidade</label>
+                <select class="form-control" name="cidade" id="cidade">
+                <div class="invalid-feedback">Favor Selecionar Cidade</div>
+
+                </select>
+            </div>
+        </div>
+</div>
+
+
+
+    <script language="JavaScript" type="text/javascript" charset="utf-8">
+      new dgCidadesEstados({
+        cidade: document.getElementById('cidade'),
+        estado: document.getElementById('estado')
+      })
+    </script>
+
+
+  <!-- JavaScript (Opcional) -->
+  <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+ 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
 
 <div class="col-xs-12 col-sm-12 col-md-12 text-center">
         <button type="submit" class="btn btn-primary">Cadastrar</button>
-    </div>
+</div>
+
+
 
 {!! Form::close() !!}
 

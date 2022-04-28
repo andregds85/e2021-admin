@@ -15,16 +15,8 @@
      
   
 
-<div class="row">
-    <div class="col-lg-12 margin-tb">
-        <div class="pull-left">
-            <h2>Novo Usuário</h2>
-        </div>
-        <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('users.index') }}"> Voltar</a>
-        </div>
-    </div>
-</div>
+    <div class="container">
+
 
 
 @if (count($errors) > 0)
@@ -42,6 +34,7 @@
 $id=$_GET['id'];
 echo $id;
 ?>
+
 
 
 
@@ -71,9 +64,11 @@ echo $id;
             {!! Form::password('confirm-password', array('placeholder' => 'Confirmar Senha','class' => 'form-control')) !!}
         </div>
     </div>
+
+    
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>Grupo:</strong>
+            <strong>Grupo:(roles) </strong>
             {!! Form::select('roles[]', $roles,[], array('class' => 'form-control','multiple')) !!}
         </div>
     </div>
@@ -84,7 +79,7 @@ echo $id;
 <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-                <label for="exampleInputCategoria">Hospital</label>
+                <label for="exampleInputCategoria">Hospital:(categorias_id)</label>
                 <select class="form-control" name="categorias_id" id="categoria">
 
                 <?php
@@ -93,7 +88,7 @@ echo $id;
                     $itensP = categoria::where('macro',$id)->get(); ?>
 
                 ?>
-               <option value="Hospital Não Selecionado">Hospital Não Selecionado</option>
+                  <option value=""></option> 
                 @foreach($itensP as $item)
                 <option value='{{$item->id}}' >{{$item->id}}{{$item->name}}</option>
                 @endforeach
@@ -101,6 +96,7 @@ echo $id;
             </div>
         </div>
 </div>
+
 
 
 <div class="row">
@@ -122,6 +118,7 @@ echo $id;
             </div>
         </div>
 </div>
+
 
 <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12">
@@ -187,7 +184,7 @@ echo $id;
 </div>
 
 
-
+</div>
     <script language="JavaScript" type="text/javascript" charset="utf-8">
       new dgCidadesEstados({
         cidade: document.getElementById('cidade'),
@@ -211,5 +208,4 @@ echo $id;
 
 {!! Form::close() !!}
 
-<p class="text-center text-primary"><small>Usuários</small></p>
 @endsection

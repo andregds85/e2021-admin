@@ -43,8 +43,16 @@ class UserController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'email' => 'required|email|unique:users,email',
-            'password' => 'required|same:confirm-password',
-         /*   'roles' => 'required' */
+            'password' => 'same:confirm-password',
+            'roles' => 'required',
+            'categorias_id' => 'required', 
+            'perfil' => 'required', 
+            'cpf' => 'required', 
+            'telefone' => 'required', 
+            'estado' => 'required',
+            'cidade' => 'required', 
+
+
 
         ]);
 
@@ -78,9 +86,21 @@ class UserController extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
-            'email' => 'required|email|unique:users,email,'.$id,
+            'email' => 'required|email|unique:users,email',
             'password' => 'same:confirm-password',
-           /* 'roles' => 'required'*/
+            'roles' => 'required',
+            'categorias_id' => 'required', 
+            'perfil' => 'required', 
+            'cpf' => 'required', 
+            'telefone' => 'required', 
+            'estado' => 'required',
+            'cidade' => 'required', 
+ 
+
+
+
+
+
         ]);
 
         $input = $request->all();
